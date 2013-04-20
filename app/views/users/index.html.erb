@@ -1,0 +1,33 @@
+<% return if not is_admin? %>
+<fieldset>
+    <legend>Users</legend>
+    <table>
+        <thead>
+            <td>
+                Email
+            </td>
+            <td>
+                Rank
+            </td>
+            <td>
+            </td>
+        </thead>
+        <tbody>
+            <% @users.each do |user| %>
+                <tr>
+                    <td>
+                        <%= user.email %>
+                    </td>
+                    <td>
+                        <%= user.rank_text %>
+                    </td>
+                    <td>
+                        <button><%= link_to 'Show', user %></button>
+                        <button><%= link_to 'Edit', edit_user_path(user) %></button>
+                        <button><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+                    </td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</fieldset>

@@ -1,0 +1,18 @@
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>DKP</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @characters.each do |character| %>
+            <% dkp = character.dkp %>
+            <tr>
+                <td><span class="<%= character.character_class %>"><%= character[:name] %></span></td>
+                <td><span class="<%= character.style(dkp) %>"><%= dkp %></span></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>

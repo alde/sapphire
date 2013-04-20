@@ -35,7 +35,6 @@
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
   </head>
   <body>
-
     <div class="navbar navbar-fluid-top">
       <div class="navbar-inner">
         <div class="container-fluid">
@@ -47,10 +46,18 @@
           <a class="brand" href="#">Sapphire</a>
           <div class="container-fluid nav-collapse">
             <ul class="nav">
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
+              <li><%= link_to "Characters", "/characters"  %></li>
+              <li><%= link_to "Items", "/items"  %></li>
+              <li><%= link_to "Raids", "/raids"  %></li>
             </ul>
+            <div class="sign_in">
+              <% if user_signed_in? then %>
+                <span>Logged in as: <%= current_user.email %></span>
+                <span><%= link_to "Logoff", destroy_user_session_path, :method => :delete %></span>
+              <% else %>
+                <span><%= link_to "Login", "/users/sign_in" %></span>
+              <% end %>
+            </div>
           </div><!--/.nav-collapse -->
         </div>
       </div>
@@ -59,14 +66,20 @@
     <div class="container-fluid">
       <div class="row-fluid">
         <div class="span3">
-          <div class="well sidebar-nav">
-            <ul class="nav nav-list">
-              <li class="nav-header">Sidebar</li>
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
-            </ul>
-          </div><!--/.well -->
+          <% if is_admin? then %>
+            <div class="well sidebar-nav">
+              <ul class="nav nav-list">
+                <li class="nav-header">Sidebar</li>
+                <li><%= link_to "Characters", "/characters" %></li>
+                <li><%= link_to "Items", "/items"  %></li>
+                <li><%= link_to "Adjustments", "/adjustments" %></li>
+                <li><%= link_to "Prices", "/prices" %></li>
+                <li><%= link_to "Multipliers", "/multipliers" %></li>
+                <li><%= link_to "Decay Shares", "/decay_shares" %></li>
+                <li><%= link_to "Users", "/users" %></li>
+              </ul>
+            </div><!--/.well -->
+          <% end %>
         </div><!--/span-->
         <div class="span9">
           <%= bootstrap_flash %>

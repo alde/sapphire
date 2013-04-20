@@ -1,0 +1,8 @@
+<fieldset>
+  <legend>Characters</legend>
+    <% if user_signed_in? then %>
+      <%= render 'admin' %>
+    <% else %>
+      <%= render 'user' %>
+    <% end %>
+</fieldset>
