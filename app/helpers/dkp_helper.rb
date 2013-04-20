@@ -1,0 +1,2 @@
+module DkpHelper
+end
