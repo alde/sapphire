@@ -14,7 +14,11 @@
   <tbody>
     <% @items.each do |item| %>
       <tr>
-        <td class="<%= item.quality.downcase %>"><%= item.name %></td>
+        <td class="<%= item.quality.downcase %>">
+          <%= link_to item.name, item, {
+            :class => item.quality.downcase
+          } %>
+        </td>
         <td><%= item.price_normal %></td>
         <td><%= item.price_heroic %></td>
         <td><%= link_to 'Show', item %></td>
