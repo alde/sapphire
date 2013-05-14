@@ -1,0 +1,87 @@
+<fieldset>
+    <legend class="<%= @character.character_class %>"><%= @character.name %></legend>
+    <%= link_to 'Edit', edit_character_path(@character) %> |
+    <%= link_to 'Back', characters_path %>
+    <div>
+        <dl>
+            <% dkp = @character.dkp %>
+            <dt>Shares:</dt>
+            <dd><%= @character.shares %></dd>
+            <dt>DKP earned:</dt>
+            <dd><%= @character.dkp_earned %></dd>
+            <dt>DKP spent:</dt>
+            <dd><%= @character.dkp_spent %></dd>
+            <dt>DKP:</dt>
+            <dd class="<%= @character.style(dkp) %>"><%= dkp %></dd>
+        </dl>
+    </div>
+    <fieldset>
+        <legend>Raids</legend>
+        <% raids = @character.raids %>
+        <% if raids.length > 0 then %>
+            <table>
+                <thead>
+                    <td>Comment</td>
+                    <td>Date</td>
+                </thead>
+                <tbody>
+                    <% raids.each do |raid| %>
+                        <tr>
+                            <td>
+                                <%= raid[:comment] %>
+                            </td>
+                            <td>
+                                <%= raid[:date] %>
+                            </td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        <% else %>
+            <div>No raids attended</div>
+        <% end %>
+    </fieldset>
+    <fieldset>
+        <legend>Adjustments</legend>
+        <% adjustments = @character.adjustments %>
+        <% if adjustments.length > 0 then %>
+            <table>
+                <thead>
+                    <td>Comment</td>
+                    <td>Date</td>
+                    <td>Shares</td>
+                </thead>
+                <tbody>
+                    <% adjustments.each do |adj| %>
+                        <tr>
+                            <td>
+                                <%= adj[:comment] %>
+                            </td>
+                            <td>
+                                <%= adj[:date] %>
+                            </td>
+                            <td>
+                                <%= adj[:shares] %>
+                            </td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        <% else %>
+            <div>No adjustments</div>
+        <% end %>
+    </fieldset>
+
+    <fieldset>
+        <legend>Attendance</legend>
+        <ul>
+            <li>
+                <%= @character.attendance_short %>% last 30 days
+            </li>
+            <li>
+                <%= @character.attendance_long %>% last 60 days
+            </li>
+        </ul>
+    </fieldset>
+</fieldset>
+

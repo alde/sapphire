@@ -1,4 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_character_path(@character) %> |
-<%= link_to 'Back', characters_path %>
+<% if is_admin? then %>
+    <%= render('admin_show') %>
+<% else %>
+    <%= render('user_show') %>
+<% end %>

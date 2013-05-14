@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 20130420182225) do
     t.float   "price_normal", null: false
     t.float   "price_heroic", null: false
     t.text    "slot",         null: false
-    t.text    "type",         null: false
+    t.text    "item_type",    null: false
     t.integer "ilvl",         null: false
     t.text    "quality",      null: false
   end
@@ -106,8 +106,6 @@ ActiveRecord::Schema.define(version: 20130420182225) do
   end
 
   create_table "users", force: true do |t|
-    t.text     "name",                                            null: false
-    t.text     "password",                                        null: false
     t.integer  "rank",                                            null: false
     t.string   "email",                              default: "", null: false
     t.string   "encrypted_password",     limit: 128, default: "", null: false

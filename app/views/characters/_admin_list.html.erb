@@ -1,0 +1,25 @@
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>DKP</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @characters.each do |character| %>
+            <% dkp = character.dkp %>
+            <tr>
+                <td><span class="<%= character.character_class %>"><%= character[:name] %></span></td>
+                <td><span class="<%= character.style(dkp) %>"><%= dkp %></span></td>
+                <td><%= link_to 'Show', character %></td>
+                <td><%= link_to 'Edit', edit_character_path(character) %></td>
+                <td><%= link_to 'Destroy', character, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+<div><%= link_to 'New Character', new_character_path %></div>
