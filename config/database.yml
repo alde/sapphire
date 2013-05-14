@@ -6,8 +6,8 @@
 development:
   adapter: mysql
   database: dkpdevel
-  username: root
-  password: piccolo
+  username: dkpdevel
+  password: dkpdevel
   host: 192.168.1.104
   port: 3306
   socket: /var/run/mysqld/mysql.sock
