@@ -1,0 +1,52 @@
+<fieldset>
+    <legend class="<%= @item.quality.downcase %>"><%= @item.name %></legend>
+
+    <%= link_to 'Edit', edit_item_path(@item) %> |
+    <%= link_to 'Back', items_path %>
+    <div>
+        <ul class="nav nav-tabs">
+            <li><a href="#normal" data-toggle="tab">Normal</a></li>
+            <li><a href="#heroic" data-toggle="tab">Heroic</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="normal">
+                <div class="wowhead-tooltip">
+                    <%= raw @item.tooltip(:normal) %>
+                </div>
+                <div>Price: <span class="q1"><%= @item.price(:normal) %></span> dkp</div>
+                <%= link_to "View on Wowhead", @item.url(:normal) %>
+            </div>
+            <div class="tab-pane" id="heroic">
+                <div class="wowhead-tooltip">
+                    <%= raw @item.tooltip(:heroic) %>
+                </div>
+                <div>Price: <span class="q1"><%= @item.price(:heroic) %></span> dkp</div>
+                <%= link_to "View on Wowhead", @item.url(:heroic) %>
+            </div>
+        </div>
+    </div>
+
+    <fieldset>
+        <legend>Looters</legend>
+        <table>
+            <thead>
+                <td>Name</td>
+                <td>Price</td>
+                <td>Heroic?</td>
+                <td>Raid</td>
+                <td>Date</td>
+            </thead>
+            <tbody>
+                <% @item.looters.each do |i| %>
+                <tr>
+                    <td><%= i[:name] %></td>
+                    <td><%= i[:price] %></td>
+                    <td><%= i[:heroic] %></td>
+                    <td><%= i[:raid] %></td>
+                    <td><%= i[:date] %></td>
+                </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </fieldset>
+</fieldset>

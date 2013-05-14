@@ -2,10 +2,57 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.legendary {
-    color: orange;
+$legendary: #DE0880;
+$epic: #9035CF;
+$rare: #0870C1;
+$uncommon: #1EFF00;
+$copper: #DE800D;
+
+.q6, .q7 {
+    color: #E5CC63;
 }
 
-.epic {
-    color: purple;
+.legendary, .q5 {
+    color: $legendary;
+}
+
+.epic, .q4 {
+    color: $epic;
+}
+
+.rare, .q3 {
+    color: $rare;
+}
+
+.uncommon, .q2 {
+    color: $uncommon;
+}
+
+.q1 {
+    color: #4679A6;
+}
+
+.q0 {
+    color: gray;
+}
+
+.wowhead-tooltip {
+    background-color: #434343;
+    border: 3px ridge silver;
+    border-radius: 5px;
+    width: 400px;
+    padding: 10px;
+    color: white;
+}
+
+.moneygold {
+    color: gold;
+}
+
+.moneysilver {
+    color: silver;
+}
+
+.moneycopper {
+    color: $copper;
 }
