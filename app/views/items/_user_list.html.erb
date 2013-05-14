@@ -1,0 +1,27 @@
+<%= link_to 'New Item', new_item_path %>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Normal Price</th>
+      <th>Heroic Price</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @items.each do |item| %>
+      <tr>
+        <td class="<%= item.quality.downcase %>">
+            <%= link_to item.name, item, {
+                :class => item.quality.downcase
+            } %>
+        </td>
+        <td><%= item.price_normal %></td>
+        <td><%= item.price_heroic %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

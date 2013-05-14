@@ -1,8 +1,6 @@
 <fieldset>
     <legend class="<%= @item.quality.downcase %>"><%= @item.name %></legend>
 
-    <%= link_to 'Edit', edit_item_path(@item) %> |
-    <%= link_to 'Back', items_path %>
     <div>
         <ul class="nav nav-tabs">
             <li class="active"><a href="#normal" data-toggle="tab">Normal</a></li>
