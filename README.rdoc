@@ -1,6 +1,17 @@
 == Sapphire DKP
 
+Ruby on rails evolution of Vaadin DKP
+
+=== Ruby version
 - Ruby 2.0
 
-- Rails from github
+=== Running
+First install the bundle gem
 
+$ gem install bundle
+
+Install dependencies
+$ bundle install
+
+Start the server
+$ ./bin/rails s
