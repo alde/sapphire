@@ -5,10 +5,10 @@
 #   gem 'sqlite3'
 development:
   adapter: mysql
-  database: dkpdevel
-  username: dkpdevel
-  password: dkpdevel
-  host: 192.168.1.104
+  database: sapphire-devel
+  username: sapphire-devel
+  password: sapphire-devel
+  host: alde.nu
   port: 3306
   socket: /var/run/mysqld/mysql.sock
 
