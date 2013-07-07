@@ -5,6 +5,7 @@ class Character < ActiveRecord::Base
   end
 
   def dkp
+
     prng = Random.new
     prng.rand(-50.0..50.0).round(2)
   end
@@ -23,7 +24,7 @@ class Character < ActiveRecord::Base
   end
 
   def shares
-    234
+    CharacterReward.find_by_id(self[:character_id])
   end
 
   def raids

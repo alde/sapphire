@@ -1,4 +1,6 @@
 Sapphire::Application.routes.draw do
+  resources :character_rewards
+
   resources :items
 
   devise_for :users
