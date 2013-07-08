@@ -1,4 +1,10 @@
 Sapphire::Application.routes.draw do
+  resources :loots
+
+  resources :adjustments
+
+  resources :rewards
+
   resources :character_rewards
 
   resources :items

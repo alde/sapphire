@@ -1,0 +1,25 @@
+<h1>Listing adjustments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @adjustments.each do |adjustment| %>
+      <tr>
+        <td><%= link_to 'Show', adjustment %></td>
+        <td><%= link_to 'Edit', edit_adjustment_path(adjustment) %></td>
+        <td><%= link_to 'Destroy', adjustment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Adjustment', new_adjustment_path %>

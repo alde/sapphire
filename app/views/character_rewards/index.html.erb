@@ -1,0 +1,25 @@
+<h1>Listing character_rewards</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @character_rewards.each do |character_reward| %>
+      <tr>
+        <td><%= link_to 'Show', character_reward %></td>
+        <td><%= link_to 'Edit', edit_character_reward_path(character_reward) %></td>
+        <td><%= link_to 'Destroy', character_reward, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Character reward', new_character_reward_path %>

@@ -1,0 +1,17 @@
+<%= form_for(@adjustment) do |f| %>
+  <% if @adjustment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@adjustment.errors.count, "error") %> prohibited this adjustment from being saved:</h2>
+
+      <ul>
+      <% @adjustment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

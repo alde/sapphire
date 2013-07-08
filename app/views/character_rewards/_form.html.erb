@@ -1,0 +1,17 @@
+<%= form_for(@character_reward) do |f| %>
+  <% if @character_reward.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@character_reward.errors.count, "error") %> prohibited this character_reward from being saved:</h2>
+
+      <ul>
+      <% @character_reward.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
